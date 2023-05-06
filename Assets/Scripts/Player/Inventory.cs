@@ -68,4 +68,9 @@ public class Inventory
             }
         }
     }
+
+    public void Remove(int index)
+    {
+
+    }
 }
