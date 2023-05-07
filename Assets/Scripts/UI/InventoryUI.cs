@@ -31,9 +31,9 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    void Refresh()
+    public void Refresh()
     {
-        if(slots.Count == player.inventory.slots.Count)
+        if (slots.Count == player.inventory.slots.Count)
         {
             for (int i = 0; i < slots.Count; i++)
             {

@@ -9,15 +9,27 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator animator;
 
     [SerializeField] float speed;
-    private Vector2 movementInput;
+    public Vector2 movementInput;
+
+    public bool canMove;
+
     private void Awake()
     {
+        canMove = true;
         rigidBody2d = GetComponent<Rigidbody2D>();
+    }
+
+    public void EnabeMovement()
+    {
+        canMove = true;
     }
     private void FixedUpdate()
     {
-        rigidBody2d.velocity = movementInput * speed * Time.deltaTime;
-        AnimateMovement(movementInput);
+        if (canMove == true)
+        {
+            rigidBody2d.velocity = movementInput * speed * Time.deltaTime;
+            AnimateMovement(movementInput);
+        }
     }
 
     //Called whenever there is a change to an input bound to the Move action
